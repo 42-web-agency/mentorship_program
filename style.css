@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-main: 'Arial', sans-serif;
+}
 /* ===== RESET & BASIC STYLES ===== */
 body {
     margin: 0;
@@ -53,7 +58,7 @@ nav a:hover {
 }
 
 .hero button {
-    background-color: #4f46e5;
+    background-color: #ef9904;
     /* Button color */
     color: white;
     border: none;
