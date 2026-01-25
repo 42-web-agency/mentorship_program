@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact US</title>
+  <title>Contact Us - 42 Web Agency</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+
+<body class="page-contact">
+  
   <header>
     <div class="logo">42 Web Agency</div>
     <nav>
@@ -17,6 +19,49 @@
     </nav>
   </header>
 
-  <!-- contenu (optionnel) -->
+  
+  <main class="contact-hero">
+    <div class="contact-hero-inner">
+      <h1 class="contact-title">GET IN TOUCH</h1>
+
+      <div class="contact-details">
+        <p>
+          <span class="contact-icon">☎</span>
+          <a class="contact-link" href="tel:+33767824662">+33 7 67 82 46 62</a>
+        </p>
+
+        <p>
+          <span class="contact-icon">✉</span>
+          <a class="contact-link" href="mailto:paoloserhal@icloud.com">paoloserhal@icloud.com</a>
+        </p>
+
+        <p>
+          <span class="contact-icon">📍</span>
+          12 Rue de Rivoli, 75004 Paris, France
+        </p>
+      </div>
+
+      <section class="contact-card">
+        <form class="contact-form" action="#" method="post" onsubmit="return false;">
+          <div class="contact-grid">
+            <div class="contact-col">
+              <input type="text" name="name" placeholder="YOUR NAME *" required />
+              <input type="email" name="email" placeholder="YOUR EMAIL *" required />
+              <input type="tel" name="phone" placeholder="YOUR PHONE *" required />
+            </div>
+
+            <div class="contact-col">
+              <textarea name="message" placeholder="YOUR MESSAGE *" required></textarea>
+            </div>
+          </div>
+
+          <button class="btn-primary" type="submit">SEND MESSAGE</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 42 Web Agency. All rights reserved.</p>
+  </footer>
 </body>
 </html>
