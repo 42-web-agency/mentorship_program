@@ -86,15 +86,24 @@ header {
     /* Header background */
     color: var(--font-color);
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+    margin-right: 20px;
 }
 
 nav {
-    margin-top: 10px;
+    /* margin-top: 10px; removed */
 }
 
 nav a {
