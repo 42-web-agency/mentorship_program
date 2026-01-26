@@ -100,3 +100,7 @@ footer {
     padding: 20px;
     margin-top: 40px;
 }
+#quote-button {
+    background-color: orange;
+    color: white;
+}
