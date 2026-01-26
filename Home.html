@@ -1,112 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>42 Web Agency</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>42 Web Agency</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-content">
+      <div class="logo">42 Web Agency</div>
+      <nav>
+        <a href="Home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="About US.html">About</a>
+        <a href="Contact US.html">Contact</a>
+      </nav>
+    </div>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="header-content">
-            <div class="logo">42 Web Agency</div>
-            <nav>
-                <a href="Home.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="About US.html">About</a>
-                <a href="Contact US.html">Contact</a>
-            </nav>
-        </div>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <em>Enable Dark Mode!</em>
+    </div>
+  </header>
 
-        <div class="theme-switch-wrapper">
-         <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-         </label>
-         <em>Enable Dark Mode!</em>
-        </div>
-    </header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <h1>We Build Modern Websites</h1>
+    <p>
+      42 Web Agency helps startups and businesses create fast, beautiful, and responsive websites.
+    </p>
+    <button onClick="displayQuote()">Get a Free Quote</button>
+    <p id="quote"></p>
+  </section>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
-        <h1>We Build Modern Websites</h1>
-        <p>
-            42 Web Agency helps startups and businesses create fast, beautiful, and responsive websites.
-        </p>
-        <button onClick="displayQuote()">Get a Free Quote</button>
-        <p id="quote"></p>
-    </section>
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services">
+    <h2>Our Services</h2>
 
-    <!-- ===== SERVICES SECTION ===== -->
-    <section class="services">
-        <h2>Our Services</h2>
+    <div class="service-box">
+      <h3>Web Design</h3>
+      <p>Clean and modern designs focused on user experience.</p>
+    </div>
 
-        <div class="service-box">
-            <h3>Web Design</h3>
-            <p>Clean and modern designs focused on user experience.</p>
-        </div>
+    <div class="service-box">
+      <h3>Web Development</h3>
+      <p>Fast and responsive websites built with modern technologies.</p>
+    </div>
 
-        <div class="service-box">
-            <h3>Web Development</h3>
-            <p>Fast and responsive websites built with modern technologies.</p>
-        </div>
+    <div class="service-box">
+      <h3>SEO Optimization</h3>
+      <p>Improve your visibility on Google and attract more clients.</p>
+    </div>
+  </section>
 
-        <div class="service-box">
-            <h3>SEO Optimization</h3>
-            <p>Improve your visibility on Google and attract more clients.</p>
-        </div>
-    </section>
-<!--==== HELLO ==== -->
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <p>© 2026 42 Web Agency. All rights reserved.</p>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2026 42 Web Agency. All rights reserved.</p>
     <a href="https://github.com/vikingbrnt/mentorship_program.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
-        <i class="fab fa-github"></i>
+      <i class="fab fa-github"></i>
     </a>
-    </footer>
-    <script>
-        function displayQuote() {
-            // Array of inspirational quotes
-            const quotes = [
-                "The best way to predict the future is to invent it. - Alan Kay",
-                "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs",
-                "Simplicity is the ultimate sophistication. - Leonardo da Vinci",
-                "Good design is good business. - Thomas J. Watson",
-                "Your website is the center of your digital presence. - Unknown"
-            ];
-            // Generate a random index to select a quote
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            // Display the selected quote in the paragraph with id 'quote'
-            document.getElementById('quote').innerText = quotes[randomIndex];
-        }
-        displayQuote();
+  </footer>
 
-        // --- 2. DARK MODE LOGIC ---
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme');
+  <script>
+    function displayQuote() {
+      // Array of inspirational quotes
+      const quotes = [
+        "The best way to predict the future is to invent it. - Alan Kay",
+        "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs",
+        "Simplicity is the ultimate sophistication. - Leonardo da Vinci",
+        "Good design is good business. - Thomas J. Watson",
+        "Your website is the center of your digital presence. - Unknown"
+      ];
+      // Generate a random index to select a quote
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      // Display the selected quote in the paragraph with id 'quote'
+      document.getElementById('quote').innerText = quotes[randomIndex];
+    }
+    displayQuote();
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
-        }
+    // --- 2. DARK MODE LOGIC ---
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
 
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }    
-        }
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
 
-        toggleSwitch.addEventListener('change', switchTheme, false);
-    </script>
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
 </body>
 </html>
