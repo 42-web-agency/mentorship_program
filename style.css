@@ -1,7 +1,10 @@
 :root {
   --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --font-main: 'Arial', sans-serif;
+  --secondary-color: #3498db;
+  --font-main: "Times New Roman", Times, serif;
+  --bg-color: #ffffff;
+  --font-color: #333333;
+  --heading-color: #292922;
 }
 /* ===== RESET & BASIC STYLES ===== */
 body {
@@ -11,12 +14,77 @@ body {
     /* Change background color */
     color: #333;
 }
+/* ===== Dark Mode swithcing ===== */
+/* 1. Define the Color Variables (Default Light Mode) */
+
+/* 2. Define the Dark Mode Colors */
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #161625;
+    --heading-color: #818cab;
+}
+
+/* 3. Apply the variables to your body */
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* 4. Style the Switch Button */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+.theme-switch input {
+    display: none; /* Hide default checkbox */
+}
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+input:checked + .slider {
+    background-color: #66bb6a; /* Green when active */
+}
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move slider right */
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
 
 /* ===== HEADER ===== */
 header {
-    background-color: #1e1e2f;
+    background-color: var(--secondary-color);
     /* Header background */
-    color: white;
+    color: var(--font-color);
     padding: 20px;
 }
 
@@ -43,7 +111,7 @@ nav a:hover {
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
 }
 
 .hero h1 {
@@ -60,7 +128,7 @@ nav a:hover {
 .hero button {
     background-color: #ef9904;
     /* Button color */
-    color: white;
+    color: var(--font-color);
     border: none;
     padding: 15px 30px;
     font-size: 16px;
@@ -75,7 +143,8 @@ nav a:hover {
 .hero #quote {
     margin-top: 20px;
     font-style: italic;
-    color: #555;
+    color: var(--font-color);
+    opacity: 0.8;
 }
 
 /* ===== SERVICES SECTION ===== */
@@ -89,7 +158,7 @@ nav a:hover {
 }
 
 .service-box {
-    background-color: white;
+    background-color: var(--bg-color);
     padding: 20px;
     margin: 10px auto;
     max-width: 300px;
@@ -99,8 +168,8 @@ nav a:hover {
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #1e1e2f;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
     text-align: center;
     padding: 20px;
     margin-top: 40px;
@@ -110,10 +179,6 @@ footer {
    CONTACT PAGE
 ========================= */
 
-:root{
-    --font-main: "Times New Roman", Times, serif;
-  }
-  
   /* option: mettre Times partout */
   body{
     font-family: var(--font-main);

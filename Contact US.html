@@ -17,6 +17,14 @@
       <a href="About US.html">About</a>
       <a href="Contact US.html">Contact</a>
     </nav>
+
+    <div class="theme-switch-wrapper">
+         <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+         </label>
+         <em>Enable Dark Mode!</em>
+        </div>
   </header>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
@@ -65,6 +73,30 @@
     <a href="https://github.com/vikingbrnt/mentorship_program.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
         <i class="fab fa-github"></i>
     </a>
+    <script>
+              // --- 2. DARK MODE LOGIC ---
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
   </footer>
 </body>
 </html>
