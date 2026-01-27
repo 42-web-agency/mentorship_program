@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - 42 Web Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="page-contact">
+  <header>
+    <div class="header-content">
+      <div class="logo">42 Web Agency</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="About US.html">About</a>
+        <a href="Contact US.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <em>Enable Dark Mode!</em>
+    </div>
+  </header>
+
+  <main class="contact-hero">
+    <div class="contact-hero-inner">
+      <h1 class="contact-title">GET IN TOUCH</h1>
+
+      <div class="contact-details">
+        <p>
+          <span class="contact-icon">☎</span>
+          <a class="contact-link" href="tel:+33767824662">+33 7 67 82 46 62</a>
+        </p>
+
+        <p>
+          <span class="contact-icon">✉</span>
+          <a class="contact-link" href="mailto:paoloserhal@icloud.com">paoloserhal@icloud.com</a>
+        </p>
+
+        <p>
+          <span class="contact-icon">📍</span>
+          12 Rue de Rivoli, 75004 Paris, France
+        </p>
+      </div>
+
+      <section class="contact-card">
+        <form class="contact-form" action="#" method="post" onsubmit="return false;">
+          <div class="contact-grid">
+            <div class="contact-col">
+              <input type="text" name="name" placeholder="YOUR NAME *" required />
+              <input type="email" name="email" placeholder="YOUR EMAIL *" required />
+              <input type="tel" name="phone" placeholder="YOUR PHONE *" required />
+            </div>
+
+            <div class="contact-col">
+              <textarea name="message" placeholder="YOUR MESSAGE *" required></textarea>
+            </div>
+          </div>
+
+          <button class="btn-primary" type="submit">SEND MESSAGE</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 42 Web Agency. All rights reserved.</p>
+    <a href="https://github.com/vikingbrnt/mentorship_program.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+      <i class="fab fa-github"></i>
+    </a>
+  </footer>
+
+  <script>
+    // --- 2. DARK MODE LOGIC ---
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+</body>
+</html>

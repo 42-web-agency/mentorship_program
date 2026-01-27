@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About US</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">42 Web Agency</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="About US.html">About</a>
+        <a href="Contact US.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <em>Enable Dark Mode!</em>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <h1>About 42 Web Agency</h1>
+      <p>
+        We are a passionate team of web developers and designers dedicated to creating exceptional digital experiences for startups and businesses.
+      </p>
+    </section>
+
+    <section class="about-content">
+      <h2>Our Mission</h2>
+      <p>
+        At 42 Web Agency, our mission is to empower businesses with modern, responsive websites that drive growth, enhance user experience, and achieve success in the digital world.
+      </p>
+
+      <h2>Our Story</h2>
+      <p>
+        Founded in 2025, 42 Web Agency started as a small team of enthusiasts who believed in the power of great design and clean code. Today, we serve clients worldwide, helping them build their online presence.
+      </p>
+
+      <h2>Our Team</h2>
+      <div class="team">
+        <div class="team-member">
+          <h3>Paolo Serhal</h3>
+          <p>Full-stack Developer</p>
+          <p>Expert in full-stack development.</p>
+        </div>
+        <div class="team-member">
+          <h3>Malo Brunatti</h3>
+          <p>UI/UX Designer</p>
+          <p>Creative designer focused on user-centered design principles.</p>
+        </div>
+        <div class="team-member">
+          <h3>Louis Chenain</h3>
+          <p>Backend Developer</p>
+          <p>Specialist in server-side technologies and database management.</p>
+        </div>
+      </div>
+
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Custom solutions tailored to your needs</li>
+        <li>Modern technologies and best practices</li>
+        <li>Fast, reliable, and responsive support</li>
+        <li>Commitment to quality and innovation</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 42 Web Agency. All rights reserved.</p>
+    <a href="https://github.com/vikingbrnt/mentorship_program.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+      <i class="fab fa-github"></i>
+    </a>
+  </footer>
+
+  <script>
+    // --- DARK MODE LOGIC ---
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+</body>
+</html>

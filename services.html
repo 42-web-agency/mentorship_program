@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">42 Web Agency</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="About US.html">About</a>
+        <a href="Contact US.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <em>Enable Dark Mode!</em>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero">
+      <h1>Our Services</h1>
+      <p>
+        Discover the range of services we offer to help your business thrive online.
+      </p>
+    </section>
+
+    <section class="services-content">
+      <div class="service-detail">
+        <h2>Web Design</h2>
+        <p>
+          Our web design services focus on creating visually appealing and user-friendly websites. We use modern design principles to ensure your site not only looks great but also provides an excellent user experience.
+        </p>
+        <ul>
+          <li>Responsive design for all devices</li>
+          <li>Custom layouts and branding</li>
+          <li>User experience optimization</li>
+          <li>Prototyping and wireframing</li>
+        </ul>
+      </div>
+
+      <div class="service-detail">
+        <h2>Web Development</h2>
+        <p>
+          We build fast, secure, and scalable websites using the latest technologies. From simple landing pages to complex web applications, we deliver high-quality code that performs.
+        </p>
+        <ul>
+          <li>Frontend development (HTML, CSS, JavaScript)</li>
+          <li>Backend development (Node.js, PHP, etc.)</li>
+          <li>Database integration</li>
+          <li>API development</li>
+        </ul>
+      </div>
+
+      <div class="service-detail">
+        <h2>SEO Optimization</h2>
+        <p>
+          Improve your visibility on search engines and attract more organic traffic. Our SEO experts use proven strategies to boost your rankings and drive targeted visitors to your site.
+        </p>
+        <ul>
+          <li>On-page SEO optimization</li>
+          <li>Keyword research and analysis</li>
+          <li>Technical SEO audits</li>
+          <li>Content optimization</li>
+        </ul>
+      </div>
+
+      <div class="service-detail">
+        <h2>Maintenance & Support</h2>
+        <p>
+          Keep your website running smoothly with our ongoing maintenance services. We provide updates, security checks, and technical support to ensure your site remains up-to-date and secure.
+        </p>
+        <ul>
+          <li>Regular updates and backups</li>
+          <li>Security monitoring</li>
+          <li>Performance optimization</li>
+          <li>24/7 support</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 42 Web Agency. All rights reserved.</p>
+    <a href="https://github.com/vikingbrnt/mentorship_program.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+      <i class="fab fa-github"></i>
+    </a>
+  </footer>
+
+  <script>
+    // --- DARK MODE LOGIC ---
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+</body>
+</html>
